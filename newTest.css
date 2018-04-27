@@ -1,0 +1,555 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: white; 
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+    position: relative; 
+}
+
+.full_menu {
+    width: 10%;
+    min-width: 95px;
+    min-height: 95px;
+    font-size: 1.5rem;
+    color: #003300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.menu_icon {
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 100%;
+    border: 2px solid #003300;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.full_menu:hover {
+    background: -moz-linear-gradient(270deg, rgba(0,51,0,1) 0%, rgba(0,128,0,1) 100%);
+    background: -webkit-linear-gradient(270deg, rgba(0,51,0,1) 0%, rgba(0,128,0,1) 100%); 
+    background: -o-linear-gradient(270deg, rgba(0,51,0,1) 0%, rgba(0,128,0,1) 100%); 
+    background: -ms-linear-gradient(270deg, rgba(0,51,0,1) 0%, rgba(0,128,0,1) 100%);
+    background: linear-gradient(180deg, rgba(0,51,0,1) 0%, rgba(0,128,0,1) 100%);
+}
+
+.full_menu:hover .menu_icon {
+    color: white;
+    border: 2px solid white;
+}
+
+.full_menu:hover::after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #008000;
+    border-width: 1.5rem;
+    margin-left: -1.5rem;
+    z-index: 2;
+}
+
+.menu_hidden {
+    overflow: hidden;
+    max-height: 0px;
+    width: 300%;
+    background-color: rgba(35, 39, 42, 0.8);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    color: white;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transition-delay: 0.6s;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.menu_hidden .title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 1rem;
+    margin: 2rem;
+  }
+  
+.menu_hidden_item {
+    width: 100%;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transition-delay: 0.05s;
+    transform:matrix(1.00,0.00,0.00,1.00,-500,0);
+    -ms-transform:matrix(1.00,0.00,0.00,1.00,-500,0);
+    -webkit-transform:matrix(1.00,0.00,0.00,1.00,-500,0);
+  }
+
+.go_second {
+    transition-delay: 0.1s;
+  }
+
+.go_third {
+    transition-delay: 0.2s;
+}
+
+.go_fouth {
+    margin-bottom: 2rem;
+    transition-delay: 0.3s;
+}
+
+.menu_hidden_item span {
+      margin: 0 1rem;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+  }
+
+.menu_hidden_item:hover {
+    background: linear-gradient(162deg, rgba(0,128,0,1) 37%, rgba(252,70,107,0) 99%);
+}
+
+
+.full_menu:hover .menu_hidden {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+    max-height: 1000px;
+    transition-delay: 0s;
+}
+
+.full_menu:hover .menu_hidden_item {
+    transform:matrix(1.00,0.00,0.00,1.00,0,0);
+    -ms-transform:matrix(1.00,0.00,0.00,1.00,0,0);
+    -webkit-transform:matrix(1.00,0.00,0.00,1.00,0,0);
+}
+  
+.menu {
+    width: 80%;
+    min-width: 400px;
+    padding: 1rem 1.5rem 0;
+}
+
+.menu_section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.msmall_item {
+    color: #737373;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    cursor: pointer;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.msmall_item span {
+    padding-left: 1.5rem;
+}
+
+.msmall_item:after {
+    content: "|";
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #737373;
+}
+
+.msmall_item:hover {
+    text-decoration: underline;
+}
+
+.mbig_item {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid rgba(151, 12, 101, 0);
+    cursor: pointer;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.mbig_item:hover {
+    border-bottom: 3px solid #970C65;
+}
+
+.icon-question-circle-o {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0);
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.question:hover .icon-question-circle-o {
+    color: rgba(0, 0, 0, 1);
+}
+
+.mbig_item_hidden {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left:0;
+    right: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    background-color: rgba(35, 39, 42, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+.hidden_text {
+    width: 100%;
+    padding: 3em 2rem;
+  }
+  
+.mbig_item_hidden div {
+    width: 30%;
+    padding: 2rem;
+  }
+  
+.mbig_item_hidden div span::before {
+    content: "ᐳ";
+    font-size: 1rem;
+    font-weight: 800;
+    color: #66ff66;
+    margin-right: 0.5rem;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.mbig_item:hover .mbig_item_hidden {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+    max-height: 1000px;
+    transition-delay: 0s;
+}
+
+.company {
+    width: 10%;
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 1rem;
+}
+
+.company_logo {
+    width: 50%;
+    margin: 0 auto; 
+}
+
+.company_name {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    margin: 0.5rem auto;
+}
+
+.place_holder {
+    width: 100%;
+    height: 40%;
+    background-image: url('https://housingalliancepa.org/wp-content/uploads/2017/05/qtq80-WbPqcG.jpeg');
+    background-size: cover;
+    background-position-y: bottom;
+    opacity: 0.5;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12),0px 2px 2px 0px rgba(0,0,0,0.24);
+}
+
+.main {
+    width: 100%;
+    padding: 4rem 4rem 6rem;
+}
+
+.main_description {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.main_description h1 {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    font-weight: 500;
+}
+
+.main_description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.main_section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    min-width: 220px;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 25%;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 1.5rem 1rem;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.article_img {
+    min-width: 190px;
+    width: 100%;
+    height: 180px;
+    margin: 1rem auto;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+}
+
+.img_one {
+    background-image: url('https://www.thehappycatsite.com/wp-content/uploads/2017/10/best-treats-for-kittens.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_two {
+    background-image: url('https://www.pets4homes.co.uk/images/articles/3441/large/kittens-and-retained-baby-teeth-5698e9cb0ca0a.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_three {
+    background-image: url('http://static.regon.hu/odp/al/styles/blog_745x373/public/cicaa.jpg?itok=M8XaX4fM');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_four {
+    background-image: url('http://www.petwave.com/-/media/Images/Center/Care-and-Nutrition/Cat/Kittensv2/Kitten-3.ashx');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_five {
+    background-image: url('https://www.ajc.com/rf/image_large/Pub/p8/AJC/2017/05/30/Images/GettyImages-103131850.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_six {
+    background-image: url('https://worcestercountyhumanesociety.org/wp-content/uploads/2013/09/cute-cat-wallpaper-1400x1050.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_seven {
+    background-image: url('http://www.twitrcovers.com/wp-content/uploads/2012/11/Animals-Kittens-l.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_eight {
+    background-image: url('https://www.thehappycatsite.com/wp-content/uploads/2017/10/newborn-kitten.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_nine {
+    background-image: url('http://www.peakfitnessandtherapy.com/wp-content/uploads/2017/04/Sleep-Quality.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_ten {
+    background-image: url('https://travel.home.sndimg.com/content/dam/images/travel/stock/2016/12/28/iStock-512202044_Cat_Cafe_Boston_Winter_06.jpg.rend.hgtvcom.616.411.suffix/1491594583236.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_eleven {
+    background-image: url('https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/a7/Cute-Kitten-kittens-16096139-1280-800.jpg/revision/latest?cb=20120320224121');
+    background-position: center;
+    background-size: cover;
+}
+
+.img_twelve {
+    background-image: url('http://a57.foxnews.com/images.foxnews.com/content/fox-news/lifestyle/2017/11/09/how-to-keep-cat-from-scratching-your-sofa-to-shreds/_jcr_content/par/featured_image/media-0.img.jpg/931/524/1510172827500.jpg?ve=1&tl=1&text=big-top-image');
+    background-position: center;
+    background-size: cover;
+}
+
+.article span {
+    margin: 0.5rem;
+}
+
+.article:hover {
+    opacity: .75;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+}
+
+.footer {
+    width: 100%;
+    padding: 4rem;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer_item {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    min-width: 220px;
+    max-width: 450px;
+    margin: 1.5rem auto;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.footer_item span {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+}
+
+
+.footer_item li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.footer_links {
+    width: 100%;
+    padding: 0 4rem 2rem;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_item li:hover {
+    font-weight: 400;
+    transform: scale(1,1) rotate(0)skew(0,0) translate(27px,0); 
+	-webkit-transform: scale(1,1) rotate(0)skew(0,0) translate(27px,0); 
+	-moz-transform: scale(1,1) rotate(0)skew(0,0) translate(27px,0); 
+	transform-origin: 50% 50%;
+}
+
+.footer li:hover::before {
+    color: black;
+}
+
+
+.footer li::before {
+    content: "ᐳ";
+    color: rgba(0, 0, 0, 0);;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-right: 0.5rem;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.links_item {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.links_item span {
+    cursor: pointer;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.youtube:hover {
+    background: #fc0d1c;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.insta:hover {
+    background: linear-gradient(to bottom left, #A343A1, #F99C48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vk:hover {
+    background: #55779A;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
